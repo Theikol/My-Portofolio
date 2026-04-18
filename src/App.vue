@@ -7,7 +7,7 @@ const profil = ref({
   namaPanggilan:    "Adrian",
   namaLengkap:      "Adrian Haikal",
   deskripsiPendek:  "I am a fresh graduate with a GPA of 3.X who is interested in the field of frontend development.",
-  email:            "halo@adrianhaikal.dev",
+  email:            "ikoladeian@gmail.com",
   // Ganti path di bawah dengan path foto Anda (misal: '/assets/foto.jpg')
   foto:             null,
   statusTersedia:   true,
@@ -22,20 +22,25 @@ const menu = ref([
 
 const keahlian = ref([
   { nama: "Vue.js",            ikon: "fa-brands fa-vuejs",   warna: "clr-vue"   },
-  { nama: "Nuxt.js",           ikon: "fa-brands fa-vuejs",   warna: "clr-nuxt"  },
-  { nama: "JavaScript (ES6+)", ikon: "fa-brands fa-js",      warna: "clr-js"    },
-  { nama: "HTML & CSS",        ikon: "fa-brands fa-html5",   warna: "clr-html"  },
-  { nama: "Tailwind CSS",      ikon: "fa-solid fa-wind",     warna: "clr-tw"    },
-  { nama: "Git & GitHub",      ikon: "fa-brands fa-github",  warna: "clr-git"   },
+{ nama: "Nuxt.js",           ikon: "fa-brands fa-vuejs",   warna: "clr-nuxt"  },
+{ nama: "JavaScript (ES6+)", ikon: "fa-brands fa-js",      warna: "clr-js"    },
+{ nama: "HTML & CSS",        ikon: "fa-brands fa-html5",   warna: "clr-html"  },
+{ nama: "Tailwind CSS",      ikon: "fa-solid fa-wind",     warna: "clr-tw"    },
+{ nama: "Git & GitHub",      ikon: "fa-brands fa-github",  warna: "clr-git"   },
+
+{ nama: "Go (Golang)",       ikon: "fa-solid fa-code",     warna: "clr-go"    },
+{ nama: "MySQL",             ikon: "fa-solid fa-database", warna: "clr-mysql" },
+{ nama: "Ubuntu",            ikon: "fa-brands fa-ubuntu",  warna: "clr-ubuntu"},
+{ nama: "PHP",               ikon: "fa-brands fa-php",     warna: "clr-php"   },
 ]);
 
 const proyek = ref([
   {
     id: 1,
-    judul:      "Sistem Kasir (POS) Toko",
-    deskripsi:  "Aplikasi Point of Sale untuk mengelola inventaris, penjualan harian, dan pencetakan struk digital secara real-time.",
-    teknologi:  ["Vue 3", "Pinia", "Tailwind CSS", "Firebase"],
-    github: "#",
+    judul:      "Activity Monitoring System",
+    deskripsi:  "Program monitoring dan pemantauan aktivitas yang terintegrasi exproler dengan webcam dan screen recording untuk mendeteksi aktivitas pengguna",
+    teknologi:  ["Python 3.10", "Open CV", "MSS", "Pywin32", "Numpy"],
+    github: "https://github.com/Theikol/WhatIsHeDoing-.git",
     link:   "#",
   },
   {
@@ -44,30 +49,30 @@ const proyek = ref([
     deskripsi:  "Kloning antarmuka web streaming dengan TMDB API. Pencarian cerdas, trailer, dan daftar tontonan.",
     teknologi:  ["React", "Gin", "MySQL", "TMDB_API", "Rest_API"],
     github: "#",
-    link:   "#",
+    link:   "https://ikolcineverse.online",
   },
   {
     id: 3,
-    judul:      "Dasbor Keuangan Pribadi",
+    judul:      "Dashboard Management Keuangan",
     deskripsi:  "Sistem pencatatan pemasukan & pengeluaran serta analisis keuangan dengan php native",
     teknologi:  ["Xampp Environment with PHP Native"],
-    github: "#",
+    github: "https://github.com/Theikol/FinancialManagement.git",
     link:   "#",
   },
-  {
-    id: 4,
-    judul:      "Website Undangan Pernikahan",
-    deskripsi:  "Undangan digital interaktif dengan fitur RSVP, buku tamu, dan galeri foto animasi yang mulus.",
-    teknologi:  ["Vue 3", "Tailwind", "GSAP"],
-    github: "#",
-    link:   "#",
-  },
+  // Tambahkan proyek lain di sini{
+  //  id: 4,
+  //  judul:      "Website Undangan Pernikahan",
+  // deskripsi:  "Undangan digital interaktif dengan fitur RSVP, buku tamu, dan galeri foto animasi yang mulus.",
+  // teknologi:  ["Vue 3", "Tailwind", "GSAP"],
+  //  github: "#",
+  //  link:   "#",
+  //},
 ]);
 
 const sosial = ref([
-  { nama: "GitHub",    url: "https://github.com/",    ikon: "fa-brands fa-github"      },
-  { nama: "LinkedIn",  url: "https://linkedin.com/",  ikon: "fa-brands fa-linkedin-in" },
-  { nama: "Instagram", url: "https://instagram.com/", ikon: "fa-brands fa-instagram"   },
+  { nama: "GitHub",    url: "https://github.com/Theikol",    ikon: "fa-brands fa-github"      },
+  { nama: "LinkedIn",  url: "https://linkedin.com/in/adrian-haikal-60aa03320",  ikon: "fa-brands fa-linkedin-in" },
+  { nama: "Instagram", url: "https://instagram.com/adrianhaikall_", ikon: "fa-brands fa-instagram"   },
 ]);
 
 // ─── UI STATE ─────────────────────────────────────────────────
@@ -191,7 +196,7 @@ onUnmounted(() => {
             {{ profil.namaLengkap }}<span class="accent">.</span>
           </h1>
           <h2 class="hero-sub reveal" style="--delay:.4s">
-            Iam a &nbsp;<em>Frontend Developer</em>.
+            I'am a &nbsp;<em>Full Stack Developer</em>.
           </h2>
           <p class="hero-desc reveal" style="--delay:.55s">
             {{ profil.deskripsiPendek }}
@@ -205,7 +210,7 @@ onUnmounted(() => {
 
           <div class="hero-cta reveal" style="--delay:.7s">
             <a href="#proyek" class="btn-primary">
-              Lihat Karya <i class="fa-solid fa-arrow-right"></i>
+              Lihat Karya <!--<i class="fa-solid fa-arrow-right"></i>-->
             </a>
             <a :href="mailtoLink" class="btn-outline">
               Hubungi Saya
@@ -334,7 +339,7 @@ onUnmounted(() => {
           <h2 class="contact-title">Mari Terhubung</h2>
           <p class="contact-desc">
             Saat ini saya terbuka untuk peluang baru. Kotak masuk saya selalu terbuka.
-            Baik Anda punya pertanyaan, tawaran pekerjaan, atau sekadar ingin menyapa —
+            Baik Anda punya pertanyaan, tawaran pekerjaan, atau sekadar ingin menyapa,
             saya akan berusaha membalas secepat mungkin!
           </p>
           <a :href="`mailto:${profil.email}`" class="btn-outline btn-lg reveal" style="--delay:.2s">
@@ -372,7 +377,7 @@ onUnmounted(() => {
 
     <!-- Sidebar Email (Desktop) -->
     <aside class="sidebar-email" aria-label="Email">
-      <a :href="mailtoLink" class="email-link">{{ profil.email }}</a>
+      <a :href="mailtoLink" class="email-link">{{ "ikoladrian@gmail.com" }}</a>
     </aside>
 
   </div>
