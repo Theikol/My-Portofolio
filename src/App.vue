@@ -7,7 +7,7 @@ const profil = ref({
   namaPanggilan:    "Adrian",
   namaLengkap:      "Adrian Haikal",
   deskripsiPendek:  "I am a fresh graduate with a GPA of 3.X who is interested in the field of frontend development.",
-  email:            "ikoladeian@gmail.com",
+  email:            "ikoladrian@gmail.com",
   // Ganti path di bawah dengan path foto Anda (misal: '/assets/foto.jpg')
   foto:             null,
   statusTersedia:   true,
@@ -21,44 +21,68 @@ const menu = ref([
 ]);
 
 const keahlian = ref([
-  { nama: "Vue.js",            ikon: "fa-brands fa-vuejs",   warna: "clr-vue"   },
+{ nama: "Vue.js",            ikon: "fa-brands fa-vuejs",   warna: "clr-vue"   },
 { nama: "Nuxt.js",           ikon: "fa-brands fa-vuejs",   warna: "clr-nuxt"  },
 { nama: "JavaScript (ES6+)", ikon: "fa-brands fa-js",      warna: "clr-js"    },
 { nama: "HTML & CSS",        ikon: "fa-brands fa-html5",   warna: "clr-html"  },
 { nama: "Tailwind CSS",      ikon: "fa-solid fa-wind",     warna: "clr-tw"    },
 { nama: "Git & GitHub",      ikon: "fa-brands fa-github",  warna: "clr-git"   },
 
-{ nama: "Go (Golang)",       ikon: "fa-solid fa-code",     warna: "clr-go"    },
+{ nama: "Gin Framework",       ikon: "fa-brands fa-golang",     warna: "clr-go"    },
 { nama: "MySQL",             ikon: "fa-solid fa-database", warna: "clr-mysql" },
 { nama: "Ubuntu",            ikon: "fa-brands fa-ubuntu",  warna: "clr-ubuntu"},
 { nama: "PHP",               ikon: "fa-brands fa-php",     warna: "clr-php"   },
 ]);
 
 const proyek = ref([
+ 
   {
     id: 1,
-    judul:      "Activity Monitoring System",
-    deskripsi:  "Program monitoring dan pemantauan aktivitas yang terintegrasi exproler dengan webcam dan screen recording untuk mendeteksi aktivitas pengguna",
-    teknologi:  ["Python 3.10", "Open CV", "MSS", "Pywin32", "Numpy"],
+    judul: "Activity Monitoring System",
+    deskripsi: "Program monitoring dan pemantauan aktivitas yang terintegrasi exproler dengan webcam dan screen recording untuk mendeteksi aktivitas pengguna",
+    teknologi: [
+      { nama: "Python", ikon: "fa-brands fa-python" },
+
+  { nama: "OpenCV", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" },
+
+  { nama: "MSS", ikon: "fa-solid fa-desktop" },
+
+  { nama: "Pywin32", ikon: "fa-brands fa-windows" },
+
+  { nama: "Numpy", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" },
+    ],
     github: "https://github.com/Theikol/WhatIsHeDoing-.git",
-    link:   "#",
+    link: "#",
   },
   {
     id: 2,
-    judul:      "Website Index Movies & Trending Movies",
-    deskripsi:  "Kloning antarmuka web streaming dengan TMDB API. Pencarian cerdas, trailer, dan daftar tontonan.",
-    teknologi:  ["React", "Gin", "MySQL", "TMDB_API", "Rest_API"],
+    judul: "Website Index Movies & Trending Movies",
+    deskripsi: "Website Index Movies & Trending Movies", deskripsi: "Kloning antarmuka web streaming dengan TMDB API. Pencarian cerdas, trailer, dan daftar tontonan.",
+    teknologi: [
+      { nama: "React", ikon: "fa-brands fa-react" },
+      { nama: "Gin", ikon: "fa-brands fa-golang" },
+      { nama: "MySQL", ikon: "fa-solid fa-database" },
+      { nama: "Cloudflare", ikon: "fa-solid fa-cloud" },
+      { nama: "API", ikon: "fa-solid fa-plug" },
+    ],
     github: "#",
-    link:   "https://ikolcineverse.online",
+    link: "https://ikolcineverse.online",
   },
   {
     id: 3,
-    judul:      "Dashboard Management Keuangan",
-    deskripsi:  "Sistem pencatatan pemasukan & pengeluaran serta analisis keuangan dengan php native",
-    teknologi:  ["Xampp Environment with PHP Native"],
+    judul: "Dashboard Management Keuangan",
+    deskripsi: "Sistem pencatatan pemasukan & pengeluaran serta analisis keuangan dengan php native dan mysql",
+    teknologi: [
+      { nama: "PHP", ikon: "fa-brands fa-php" },
+      { nama: "MySQL", ikon: "fa-solid fa-database" },
+      { nama: "Apache", ikon: "fa-solid fa-server" },
+      { nama: "HTML", ikon: "fa-brands fa-html5" },
+      { nama: "CSS", ikon: "fa-brands fa-css3-alt" },
+    ],
     github: "https://github.com/Theikol/FinancialManagement.git",
-    link:   "#",
-  },
+    link: "#",
+  }
+
   // Tambahkan proyek lain di sini{
   //  id: 4,
   //  judul:      "Website Undangan Pernikahan",
@@ -73,6 +97,7 @@ const sosial = ref([
   { nama: "GitHub",    url: "https://github.com/Theikol",    ikon: "fa-brands fa-github"      },
   { nama: "LinkedIn",  url: "https://linkedin.com/in/adrian-haikal-60aa03320",  ikon: "fa-brands fa-linkedin-in" },
   { nama: "Instagram", url: "https://instagram.com/adrianhaikall_", ikon: "fa-brands fa-instagram"   },
+  { nama: "Email", url: "https://mail.google.com/mail/?view=cm&fs=1&to=adrianhaikall@gmail.com", ikon: "fa-regular fa-envelope" }
 ]);
 
 // ─── UI STATE ─────────────────────────────────────────────────
@@ -212,7 +237,7 @@ onUnmounted(() => {
             <a href="#proyek" class="btn-primary">
               Lihat Karya <!--<i class="fa-solid fa-arrow-right"></i>-->
             </a>
-            <a :href="mailtoLink" class="btn-outline">
+            <a href="#kontak" class="btn-outline">
               Hubungi Saya
             </a>
           </div>
@@ -320,7 +345,10 @@ onUnmounted(() => {
             <h3 class="project-title">{{ p.judul }}</h3>
             <p class="project-desc">{{ p.deskripsi }}</p>
             <ul class="project-tech" role="list">
-              <li v-for="tech in p.teknologi" :key="tech">{{ tech }}</li>
+              <li v-for="tech in p.teknologi" :key="tech.nama" class="tech-item">
+  <i :class="tech.ikon"></i>
+  <span>{{ tech.nama }}</span>
+</li>
             </ul>
           </article>
         </div>
@@ -342,9 +370,10 @@ onUnmounted(() => {
             Baik Anda punya pertanyaan, tawaran pekerjaan, atau sekadar ingin menyapa,
             saya akan berusaha membalas secepat mungkin!
           </p>
-          <a :href="`mailto:${profil.email}`" class="btn-outline btn-lg reveal" style="--delay:.2s">
-            Kirim Pesan <i class="fa-regular fa-paper-plane"></i>
+          <a :href="`https://mail.google.com/mail/?view=cm&to=ikoladrian@gmail.com`" class="btn-outline btn-lg reveal" style="--delay:.2s">
+            Send Message <i class="fa-regular fa-paper-plane"></i>
           </a>
+          
         </div>
       </div>
     </section>
@@ -377,8 +406,8 @@ onUnmounted(() => {
 
     <!-- Sidebar Email (Desktop) -->
     <aside class="sidebar-email" aria-label="Email">
-      <a :href="mailtoLink" class="email-link">{{ "ikoladrian@gmail.com" }}</a>
-    </aside>
+  <a href="https://mail.google.com/mail/?view=cm&to=ikoladrian@gmail.com" class="email-link">ikoladrian@gmail.com</a>
+</aside>
 
   </div>
 </template>
@@ -414,6 +443,10 @@ onUnmounted(() => {
   --clr-html:  #e44d26;
   --clr-tw:    #38bdf8;
   --clr-git:   #d1d5db;
+  --clr-go:      #00ADD8;
+  --clr-mysql:   #00758F;
+  --clr-ubuntu:  #E95420;
+  --clr-php:     #777BB4;
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -714,6 +747,11 @@ body {
 .clr-html { color: var(--clr-html); }
 .clr-tw   { color: var(--clr-tw);   }
 .clr-git  { color: var(--clr-git);  }
+.clr-go      { color: var(--clr-go); }
+.clr-mysql   { color: var(--clr-mysql); }
+.clr-ubuntu  { color: var(--clr-ubuntu); }
+.clr-php     { color: var(--clr-php); }
+
 
 /* ─── Proyek ───────────────────────────────────────────────── */
 .projects-grid {
@@ -857,5 +895,16 @@ body {
 @media (max-width: 480px) {
   .hero-name { font-size: 2.4rem; }
   .projects-grid { grid-template-columns: 1fr; }
+}
+.tech-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+}
+
+.tech-item i {
+  font-size: 0.9rem;
 }
 </style>
